@@ -12,7 +12,6 @@ import androidx.lifecycle.LiveData
 
 class ConnectionStatus(private val connectivityManager: ConnectivityManager)
     :LiveData<Boolean>(){
-
         constructor(application: Application):this(
             application.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         )

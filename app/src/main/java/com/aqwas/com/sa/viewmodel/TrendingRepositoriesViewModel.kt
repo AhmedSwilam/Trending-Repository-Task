@@ -1,5 +1,4 @@
 package com.aqwas.com.sa.viewmodel
-
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,8 +9,6 @@ import com.aqwas.com.sa.repository.TrendingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-
 
 @HiltViewModel
 class TrendingRepositoriesViewModel
@@ -25,6 +22,7 @@ class TrendingRepositoriesViewModel
     }
 
     fun getAllTrendingRepos() = viewModelScope.launch {
+
         repository.getTrendingRepositories().let { response ->
             if (response.isSuccessful) {
                 _response.postValue(response.body())
